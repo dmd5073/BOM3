@@ -25,7 +25,8 @@ print "Please provide the following design parameters."
 
 while (yesno.yesno("Will you have mutiple drawing that you will be adding a Bill of Material too?(Y/N)")):
     if (yesno.yesno("Will your design information change from drawing to drawing?(Y/N)")):
-        while (True):
+       mydesign = []
+       while (True):
             DWGNO = raw_input("Please Enter the Drawing Number where the Bill of Material item will be located:")
             youenter.youenter(DWGNO, "Please Renter Your Drawing Number:")
 
@@ -34,6 +35,8 @@ while (yesno.yesno("Will you have mutiple drawing that you will be adding a Bill
 
             DF = float(raw_input ("Please Enter Your Design Factor:"))
             youenter.youenter(DF, "Please Renter Your Design Factor:")
+            
+            mydesign.append(Design(DWGNO,DP,DF))
 
             if(not yesno.yesno("Would you like to add another drawing?(Y/N")):
                 break;
